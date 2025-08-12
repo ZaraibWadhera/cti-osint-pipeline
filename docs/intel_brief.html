@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Cyber Threat Intelligence Brief</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   body { font-family: Arial, sans-serif; margin: 20px; }
   .card { border: 1px solid #ddd; border-radius: 10px; padding: 15px; margin-bottom: 20px; }
@@ -10,37 +11,56 @@
   th, td { border: 1px solid #ddd; padding: 8px; font-size: 14px; }
   th { background-color: #f2f2f2; }
 
-  /* Force charts smaller */
+  /* FORCE charts smaller on all screens */
   .chart-img {
-    width: 450px !important;
+    width: 360px !important;       /* <- change this number if you want smaller/larger */
     max-width: 100% !important;
     height: auto !important;
     display: block !important;
     margin: 20px auto !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.08);
+  }
+
+  /* Keep cards from stretching too wide on big monitors */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
   }
 </style>
 </head>
 <body>
-  <h1>Cyber Threat Intelligence Brief</h1>
-  <div class="card">
-    <h2>Threats by Type</h2>
-    <img src="charts/by_type.png?v=4" alt="Threats by Type" class="chart-img">
+  <div class="container">
+    <h1>Cyber Threat Intelligence Brief</h1>
+
+    <div class="card">
+      <h2>Threats by Type</h2>
+      <img src="charts/by_type.png?v=8" alt="Threats by Type" class="chart-img">
+    </div>
+
+    <div class="card">
+      <h2>IOC Events by Day</h2>
+      <img src="charts/daily.png?v=8" alt="IOC Events by Day" class="chart-img">
+    </div>
+
+    <div class="card">
+      <h2>Enriched Events</h2>
+      <table>
+        <thead>
+          <tr><th>Time</th><th>Source</th><th>Threat</th><th>Indicator</th><th>Type</th><th>Actor</th><th>Malware</th><th>MITRE</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2025-07-25T10:22:00Z</td><td>TheHackerNews</td><td>phishing</td><td>login-security-updates.com</td><td>domain</td><td>ScatteredSpider</td><td></td><td>T1566</td></tr>
+          <tr><td>2025-07-26T12:48:00Z</td><td>BleepingComputer</td><td>ransomware</td><td>1.2.3.4</td><td>ip</td><td>BlackCat</td><td>ALPHV</td><td>T1486</td></tr>
+          <tr><td>2025-07-27T08:10:00Z</td><td>OTX</td><td>exploiting_public_facing_app</td><td>CVE-2025-1234</td><td>cve</td><td></td><td></td><td>T1190</td></tr>
+          <tr><td>2025-07-28T17:30:00Z</td><td>KrebsOnSecurity</td><td>credential_dumping</td><td>b1c0ffee...deadbeef</td><td>hash</td><td></td><td>Mimikatz</td><td>T1003</td></tr>
+          <tr><td>2025-07-29T09:05:00Z</td><td>OTX</td><td>command_and_control</td><td>contoso-c2.net</td><td>domain</td><td></td><td></td><td>T1071</td></tr>
+          <tr><td>2025-07-30T14:44:00Z</td><td>Shodan</td><td>exfiltration</td><td>5.6.7.8</td><td>ip</td><td></td><td></td><td>T1041</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><em>Generated 2025-08-12</em></p>
   </div>
-  <div class="card">
-    <h2>IOC Events by Day</h2>
-    <img src="charts/daily.png?v=4" alt="IOC Events by Day" class="chart-img">
-  </div>
-  <div class="card">
-    <h2>Enriched Events</h2>
-    <table>
-      <thead>
-        <tr><th>Time</th><th>Source</th><th>Threat</th><th>Indicator</th><th>Type</th><th>Actor</th><th>Malware</th><th>MITRE</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>2025-07-25T10:22:00Z</td><td>TheHackerNews</td><td>phishing</td><td>login-security-updates.com</td><td>domain</td><td>ScatteredSpider</td><td></td><td>T1566</td></tr><tr><td>2025-07-26T12:48:00Z</td><td>BleepingComputer</td><td>ransomware</td><td>1.2.3.4</td><td>ip</td><td>BlackCat</td><td>ALPHV</td><td>T1486</td></tr><tr><td>2025-07-27T08:10:00Z</td><td>OTX</td><td>exploiting_public_facing_app</td><td>CVE-2025-1234</td><td>cve</td><td></td><td></td><td>T1190</td></tr><tr><td>2025-07-28T17:30:00Z</td><td>KrebsOnSecurity</td><td>credential_dumping</td><td>b1c0ffee...deadbeef</td><td>hash</td><td></td><td>Mimikatz</td><td>T1003</td></tr><tr><td>2025-07-29T09:05:00Z</td><td>OTX</td><td>command_and_control</td><td>contoso-c2.net</td><td>domain</td><td></td><td></td><td>T1071</td></tr><tr><td>2025-07-30T14:44:00Z</td><td>Shodan</td><td>exfiltration</td><td>5.6.7.8</td><td>ip</td><td></td><td></td><td>T1041</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p><em>Generated 2025-08-12</em></p>
 </body>
 </html>
