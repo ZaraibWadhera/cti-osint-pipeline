@@ -10,13 +10,13 @@
   th, td { border: 1px solid #ddd; padding: 8px; font-size: 14px; }
   th { background-color: #f2f2f2; }
 
-  /* Smaller, responsive charts */
-  img {
-    max-width: 600px;   /* <-- was 80%; now capped at 600px */
-    width: 100%;        /* scale down on small screens */
-    height: auto;
-    display: block;
-    margin: 20px auto;
+  /* Force charts smaller */
+  .chart-img {
+    width: 450px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 20px auto !important;
   }
 </style>
 </head>
@@ -24,17 +24,11 @@
   <h1>Cyber Threat Intelligence Brief</h1>
   <div class="card">
     <h2>Threats by Type</h2>
-    <img src="charts/by_type.png?v=3"
-     alt="Threats by Type"
-     width="520"
-     style="max-width:100%; height:auto; display:block; margin:20px auto;">
+    <img src="charts/by_type.png?v=4" alt="Threats by Type" class="chart-img">
   </div>
   <div class="card">
     <h2>IOC Events by Day</h2>
-    <img src="charts/daily.png?v=3"
-     alt="IOC Events by Day"
-     width="520"
-     style="max-width:100%; height:auto; display:block; margin:20px auto;">
+    <img src="charts/daily.png?v=4" alt="IOC Events by Day" class="chart-img">
   </div>
   <div class="card">
     <h2>Enriched Events</h2>
