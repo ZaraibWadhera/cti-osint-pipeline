@@ -1,0 +1,11 @@
+# Copy to config.yaml and fill values if you have keys
+otx:
+  api_key: ""    # AlienVault OTX API key
+
+shodan:
+  api_key: ""    # Shodan API key
+
+feeds:
+  - https://feeds.feedburner.com/TheHackersNews
+  - https://www.bleepingcomputer.com/feed/
+  - https://krebsonsecurity.com/feed/

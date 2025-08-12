@@ -1,0 +1,26 @@
+{
+  "phishing": {
+    "tactic": "Initial Access",
+    "technique_id": "T1566"
+  },
+  "ransomware": {
+    "tactic": "Impact",
+    "technique_id": "T1486"
+  },
+  "credential_dumping": {
+    "tactic": "Credential Access",
+    "technique_id": "T1003"
+  },
+  "command_and_control": {
+    "tactic": "Command and Control",
+    "technique_id": "T1071"
+  },
+  "exfiltration": {
+    "tactic": "Exfiltration",
+    "technique_id": "T1041"
+  },
+  "exploiting_public_facing_app": {
+    "tactic": "Initial Access",
+    "technique_id": "T1190"
+  }
+}

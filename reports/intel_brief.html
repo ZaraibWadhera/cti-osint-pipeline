@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyber Threat Intelligence Brief</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+  .card { border: 1px solid #e5e7eb; border-radius: 14px; padding: 16px; margin-bottom: 16px; }
+  h1 { margin: 0 0 4px 0; }
+  h2 { margin-top: 0; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { border-bottom: 1px solid #f1f5f9; padding: 8px; font-size: 14px; text-align: left; }
+  .muted { color: #6b7280; font-size: 13px; }
+  img { max-width: 100%; height: auto; border-radius: 10px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <h1>Cyber Threat Intelligence Brief</h1>
+  <div class="muted">Generated automatically</div>
+
+  <div class="card">
+    <h2>Executive Summary</h2>
+    <p>This report summarizes recent open-source cyber threat activity observed across curated feeds and sample OSINT data. It highlights prevalent TTPs, top indicators, and mitigation guidance.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Threats by Type</h3>
+      <img src="charts/by_type.png" alt="Threats by Type">
+    </div>
+    <div class="card">
+      <h3>IOC Events by Day</h3>
+      <img src="charts/daily.png" alt="IOC Trend">
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Top Indicators</h3>
+    <table>
+      <thead><tr><th>Indicator</th><th>Type</th><th>Count</th></tr></thead>
+      <tbody>
+      <tr><td>login-security-updates.com</td><td>-</td><td>1</td></tr><tr><td>1.2.3.4</td><td>-</td><td>1</td></tr><tr><td>CVE-2025-1234</td><td>-</td><td>1</td></tr><tr><td>b1c0ffee...deadbeef</td><td>-</td><td>1</td></tr><tr><td>contoso-c2.net</td><td>-</td><td>1</td></tr><tr><td>5.6.7.8</td><td>-</td><td>1</td></tr><tr><td>secure-o365-login.org</td><td>-</td><td>1</td></tr><tr><td>9.9.9.9</td><td>-</td><td>1</td></tr><tr><td>CVE-2025-3456</td><td>-</td><td>1</td></tr><tr><td>microsoft-validate-session.com</td><td>-</td><td>1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Enriched Events (Sample)</h3>
+    <table>
+      <thead><tr>
+        <th>Time</th><th>Source</th><th>Threat</th><th>Indicator</th><th>Type</th><th>Actor</th><th>Malware</th><th>MITRE</th>
+      </tr></thead>
+      <tbody>
+      <tr><td>2025-07-25T10:22:00Z</td><td>TheHackerNews</td><td>phishing</td><td>login-security-updates.com</td><td>domain</td><td>ScatteredSpider</td><td></td><td>T1566</td></tr><tr><td>2025-07-26T12:48:00Z</td><td>BleepingComputer</td><td>ransomware</td><td>1.2.3.4</td><td>ip</td><td>BlackCat</td><td>ALPHV</td><td>T1486</td></tr><tr><td>2025-07-27T08:10:00Z</td><td>OTX</td><td>exploiting_public_facing_app</td><td>CVE-2025-1234</td><td>cve</td><td></td><td></td><td>T1190</td></tr><tr><td>2025-07-28T17:30:00Z</td><td>KrebsOnSecurity</td><td>credential_dumping</td><td>b1c0ffee...deadbeef</td><td>hash</td><td></td><td>Mimikatz</td><td>T1003</td></tr><tr><td>2025-07-29T09:05:00Z</td><td>OTX</td><td>command_and_control</td><td>contoso-c2.net</td><td>domain</td><td></td><td></td><td>T1071</td></tr><tr><td>2025-07-30T14:44:00Z</td><td>Shodan</td><td>exfiltration</td><td>5.6.7.8</td><td>ip</td><td></td><td></td><td>T1041</td></tr><tr><td>2025-08-01T11:22:00Z</td><td>TheHackerNews</td><td>phishing</td><td>secure-o365-login.org</td><td>domain</td><td></td><td></td><td>T1566</td></tr><tr><td>2025-08-03T16:15:00Z</td><td>BleepingComputer</td><td>ransomware</td><td>9.9.9.9</td><td>ip</td><td>LockBit</td><td></td><td>T1486</td></tr><tr><td>2025-08-05T07:20:00Z</td><td>OTX</td><td>exploiting_public_facing_app</td><td>CVE-2025-3456</td><td>cve</td><td></td><td></td><td>T1190</td></tr><tr><td>2025-08-07T20:40:00Z</td><td>KrebsOnSecurity</td><td>phishing</td><td>microsoft-validate-session.com</td><td>domain</td><td></td><td></td><td>T1566</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Recommended Mitigations</h3>
+    <ul>
+      <li>Enable phishing-resistant MFA and block lookalike domains with strict DMARC/DKIM/SPF.</li>
+      <li>Harden external services; patch high-risk CVEs rapidly; restrict RDP and SMB exposure.</li>
+      <li>Monitor for credential dumping tools (e.g., Mimikatz) and unusual LSASS access.</li>
+      <li>Detect and block C2 traffic with egress filtering and DNS inspection.</li>
+      <li>Establish DLP policies to detect outbound exfiltration attempts.</li>
+    </ul>
+  </div>
+
+  <div class="muted">© 2025-08-12 — CTI/OSINT Pipeline</div>
+</body>
+</html>

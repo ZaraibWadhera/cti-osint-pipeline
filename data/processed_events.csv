@@ -1,0 +1,11 @@
+timestamp,source,threat_type,indicator,indicator_type,actor,malware,description,mitre_tactic,mitre_technique_id
+2025-07-25T10:22:00Z,TheHackerNews,phishing,login-security-updates.com,domain,ScatteredSpider,,Credential-harvesting campaign targeting O365 users.,Initial Access,T1566
+2025-07-26T12:48:00Z,BleepingComputer,ransomware,1.2.3.4,ip,BlackCat,ALPHV,Ransomware infrastructure node seen scanning SMB shares.,Impact,T1486
+2025-07-27T08:10:00Z,OTX,exploiting_public_facing_app,CVE-2025-1234,cve,,,Exploit PoC for widely used edge device discovered.,Initial Access,T1190
+2025-07-28T17:30:00Z,KrebsOnSecurity,credential_dumping,b1c0ffee...deadbeef,hash,,Mimikatz,Dumping lsass credentials observed in intrusion set.,Credential Access,T1003
+2025-07-29T09:05:00Z,OTX,command_and_control,contoso-c2.net,domain,,,C2 domain associated with recent spearphish.,Command and Control,T1071
+2025-07-30T14:44:00Z,Shodan,exfiltration,5.6.7.8,ip,,,Outbound unusual data spikes to VPS host.,Exfiltration,T1041
+2025-08-01T11:22:00Z,TheHackerNews,phishing,secure-o365-login.org,domain,,,Lookalike domain used in MFA fatigue attack.,Initial Access,T1566
+2025-08-03T16:15:00Z,BleepingComputer,ransomware,9.9.9.9,ip,LockBit,,Suspected affiliate infra enumerating RDP endpoints.,Impact,T1486
+2025-08-05T07:20:00Z,OTX,exploiting_public_facing_app,CVE-2025-3456,cve,,,Active exploitation reported by multiple feeds.,Initial Access,T1190
+2025-08-07T20:40:00Z,KrebsOnSecurity,phishing,microsoft-validate-session.com,domain,,,Session token theft via fake re-auth prompts.,Initial Access,T1566
