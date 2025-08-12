@@ -10,9 +10,10 @@
   th, td { border: 1px solid #ddd; padding: 8px; font-size: 14px; }
   th { background-color: #f2f2f2; }
 
-  /* Resize and style images */
+  /* Smaller, responsive charts */
   img {
-    max-width: 80%;
+    max-width: 600px;   /* <-- was 80%; now capped at 600px */
+    width: 100%;        /* scale down on small screens */
     height: auto;
     display: block;
     margin: 20px auto;
